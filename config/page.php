@@ -14,7 +14,7 @@ return [
         "sort" => null,
         "data" => [
             "baseTitle" => " | oophp",
-            "favicon" => "favicon.ico",
+            "favicon" => "favicon.png",
             "stylesheets" => [
                 "css/style.css",
             ],
@@ -44,7 +44,10 @@ return [
             "template" => "anax/v2/footer/default",
             "region" => "footer",
             "sort" => -1,
-            "data" => null,
+            // "data" => null,
+            "data" => [
+                "navbar" => require __DIR__ . "/navbar.php",
+            ]
         ],
     ],
 ];

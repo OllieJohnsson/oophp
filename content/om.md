@@ -3,16 +3,21 @@
 Om
 =========================
 
-Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/om.md`.
+<!-- Detta innehåll är skrivet i markdown och du hittar innehållet i filen `content/om.md`. -->
 
-Denna webbplatsen är en del av kursen [XXX](https://dbwebb.se/kurser/XXX). Uppdatera så att länken går till kursens hemsida på dwebb.se.
+[FIGURE src=image/php2.png?w=200&]
 
-Några egna kloka ord om kursen?
+Denna webbplatsen är en del av kursen [OOPHP](https://dbwebb.se/kurser/oophp).
 
-En fin och representativ bild för kursen, enligt ditt egna val.
+<!-- Uppdatera så att länken går till kursens hemsida på dwebb.se. -->
 
-[FIGURE src=image/car.png?w=300 caption="En fin bil som demobild."]
+<!-- Några egna kloka ord om kursen? -->
 
-Länka till [dbwebb kursrepot på GitHub](https://github.com/dbwebbse/XXX).
+Efter att ha läst kursen htmlphp i höstas, ska det bli roligt att fördjupa sig ytterligare i PHP. Jag gillar objekt-orienterad programmering och ser fram emot att lära mig mer om klasser och objekt.
 
-Länka till [ditt eget repo för me/redovisa på GitHub](https://github.com/XXX/XXX).
+<!-- En fin och representativ bild för kursen, enligt ditt egna val. -->
+
+
+
+
+Här hittas dbwebbs [repo för kursen](https://github.com/dbwebb-se/oophp) och mitt eget för [me/redovisa](https://github.com/OllieJohnsson/oophp) på Github.

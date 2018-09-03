@@ -19,7 +19,7 @@ $title = ($title ?? "No title") . ($baseTitle ?? " | No base title defined");
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <?php if (isset($favicon)) : ?>
-    <link rel="icon" href="<?= $favicon ?>">
+    <link rel="icon" type="image/png" href="<?= $favicon ?>">
 <?php endif; ?>
 
 <?php if (isset($stylesheets)) : ?>
