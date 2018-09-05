@@ -32,10 +32,7 @@ body {
  */
 .outer-wrap-header {
     max-width: 100%;
-
-    /* min-height: 2em; */
-
-    height: 0;
+    min-height: 2em;
     background-color: #000;
     color: #fff;
 }
@@ -113,6 +110,10 @@ article h2 {
 
 article h3 {
     width: 100%;
+}
+
+article h3 ~ p {
+    margin-top: 0;
 }
 
 article p {
