@@ -19,6 +19,16 @@ return [
         "title" => "Om denna webbplats.",
     ],
     [
+        "text" => "Gissa",
+        "url" => "guess",
+        "title" => "Gissa",
+    ],
+    [
+        "text" => "Tärningsspel 100",
+        "url" => "dice",
+        "title" => "Tärningsspel 100",
+    ],
+    [
         "text" => "Lek",
         "url" => "lek",
         "title" => "Lek runt och testa att integrera kod i me-sidan.",

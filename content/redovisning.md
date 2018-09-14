@@ -30,8 +30,23 @@ Veckans TIL är autoload.php. Det krävdes inte många rader kod för att slippa
 
 Kmom02
 -------------------------
+###Hur gick det att överföra spelet “Gissa mitt nummer” in i din me-sida?
+Det gick bra! Jag skapade routes för de olika versionerna. Sen lade jag till mappen view/guess. Där började jag med att skapa en vy för varje route. Men när jag var klar såg jag att vyerna var väldigt lika. Då valde jag att istället skicka med lite variabler som gjorde att det räckte med en gemensam vy. Jag testade också att använda mig av ramverkets "$app->session" för att skapa och förstöra sessionen.
 
-Här är redovisningstexten
+###Berätta om din syn på modellering likt UML jämfört med verktyg som phpDocumentor. Fördelar, nackdelar, användningsområde? Vad tycker du om konceptet make doc?
+Modellering av typen UML har man mer användning för om man gör den innan man börjar koda.
+Man kan då se ungefär vilka klasser, properties och metoder man kommer att behöva. Men man får antagligen uppdatera diagrammet allteftersom man kommer på nya delar som behövs.
+
+PhpDocumentor genererar automatisk dokumentation av din kod. Det är ett smidigt sätt att skapa en manual för alla klasser. En fördel är att man får allting uppdaterat automatiskt och behöver inte som med UML-diagram uppdatera på flera platser. Jag ser vitsen med att skriva docblock-kommentarer för att få en bättre dokumentation. Det gäller bara att komma ihåg att skriva dem kontinuerligt.
+
+Make doc var väldigt enkelt att använda. Ett kommando i terminalen, sen var det bara att öppna webbläsaren och få en överblick över klasserna.
+
+###Hur känns det att skriva kod utanför och inuti ramverket, ser du fördelar och nackdelar med de olika sätten?
+Det kändes bra att först kopiera in ett befintligt spel, för att senare skapa direkt i ramverket. Jag kände att jag hade ganska bra koll på router och vyer sen databas-kursen. Jag försökte hålla mina routes så små som möjligt och sköta den mesta logiken inuti klasserna. Framförallt i tärningsspelet som jag hann börja på innan det blev flyttat till nästa kmom. En fördel med att koda inuti ramverket är att man får en hel del hjälp vid felsökning. Man kan lätt komma åt vilka routes som finns tillgängliga och se vad som finns i nuvarande session.
+
+###Vilken är din TIL för detta kmom?
+Veckans TIL är att docblock-kommentarerna faktiskt kan vara användbara.
+
 
 
 

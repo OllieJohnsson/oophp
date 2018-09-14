@@ -17,6 +17,8 @@ return [
             "favicon" => "favicon.png",
             "stylesheets" => [
                 "css/style.css",
+                "css/guess.css",
+                "css/dice.css"
             ],
             "javascripts" => [
                 "js/main.js",

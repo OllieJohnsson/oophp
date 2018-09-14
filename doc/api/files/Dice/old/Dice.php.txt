@@ -1,0 +1,34 @@
+<?php
+namespace Oliver\Dice;
+
+/**
+ *
+ */
+class Dice
+{
+    private $sides;
+    private $lastRoll;
+
+    protected function __construct(int $sides = 6)
+    {
+        $this->sides = $sides;
+    }
+
+    public function roll()
+    {
+        $roll = rand(1, $this->sides);
+        $this->lastRoll = $roll;
+        return $roll;
+    }
+
+    public function getLastRoll()
+    {
+        return $this->lastRoll;
+    }
+
+    public function graphic()
+    {
+        return "dice-" . $this->lastRoll;
+    }
+}
+

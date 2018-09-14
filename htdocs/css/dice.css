@@ -1,0 +1,79 @@
+.game-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: yellow; */
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* background-color: lime; */
+}
+
+.left {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.right {
+    /* align-self: flex-end; */
+    align-items: flex-end;
+}
+
+.top {
+    align-items: flex-start;
+}
+
+.full-width {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.roundedButton {
+    font-size: 1rem;
+    border: none;
+    background-color: #ed4674;
+    padding: 1rem;
+    border-radius: 3rem;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 0.4rem;
+}
+
+.roundedButton:hover {
+    background-color: #ed5c7b;
+}
+
+
+i {
+    font-style: normal;
+}
+
+/**
+ * Style a dice using UTF-8 characters.
+ */
+.dice-utf8 .dice-1::after { content: "\2680"; }
+.dice-utf8 .dice-2::after { content: "\2681"; }
+.dice-utf8 .dice-3::after { content: "\2682"; }
+.dice-utf8 .dice-4::after { content: "\2683"; }
+.dice-utf8 .dice-5::after { content: "\2684"; }
+.dice-utf8 .dice-6::after { content: "\2685"; }
+
+.dice-utf8 {
+    font-size: 4rem;
+    margin: 0;
+}
