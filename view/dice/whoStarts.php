@@ -5,22 +5,24 @@ namespace Anax\View;
 ?>
 
 <div class="game-container">
+    <a href="../dice/quit" class="quitButton left">
+        <img src="https://png.icons8.com/ios-glyphs/30/a63151/delete-sign.png">
+    </a>
     <h1><?= $title ?></h1>
 
     <div class="row-container">
         <?php foreach ($game->getPlayers() as $player) : ?>
 
-            <div class="player-container">
+            <div class="column-container">
                 <p><?= $player->getName() ?></p>
                 <div class="dice-utf8">
-                    <i class="<?= $player->getLastGraphics()[0]; ?>"></i>
+                    <i class="<?= $player->getFirstGraphic(); ?>"></i>
                 </div>
             </div>
         <?php endforeach; ?>
     </div>
 
-    <p><?= $game->getCurrentPlayer()->getName(); ?> börjar!</p>
+    <p><b><?= $game->getCurrentPlayer()->getName(); ?></b> börjar!</p>
 
     <a href="../dice/game" class="roundedButton">Spela</a>
-    <a href="../dice/quit" class="roundedButton">Avsluta</a>
 </div>

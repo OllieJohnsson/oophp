@@ -8,8 +8,7 @@ class Player
 {
     private $name;
     private $score = 0;
-    private $lastValues = [];
-    private $round;
+    private $firstRoll;
 
     public function __construct(string $playerName)
     {
@@ -17,59 +16,21 @@ class Player
     }
 
 
-    public function setRound(array $dices) :void
+
+    public function setFirstRoll(int $value) : void
     {
-        $this->round = new Round($dices);
+        $this->firstRoll = $value;
     }
 
-    public function getRound()
+    public function getFirstGraphic() : string
     {
-        return $this->round;
+        return "dice-" . $this->firstRoll;
     }
-
-    public function deleteRound()
-    {
-        $this->round = null;
-    }
-
-
-    // public function playRound()
-    // {
-    //     $values = $this->round->play();
-    //     $this->setValues($values);
-    // }
-
-
-
-    public function setValues(array $values)
-    {
-        $this->lastValues = $values;
-    }
-
-
 
     public function getName() : string
     {
         return $this->name;
     }
-
-
-    public function getLastValues() : array
-    {
-        return $this->lastValues;
-    }
-
-
-
-
-    public function getLastGraphics() : array
-    {
-        return array_map(function ($val) {
-            return "dice-" . $val;
-        }, $this->lastValues);
-    }
-
-
 
     public function updateScore(int $score) : void
     {

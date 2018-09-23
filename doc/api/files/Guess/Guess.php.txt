@@ -100,9 +100,6 @@ class Guess
         }
 
         switch ($number) {
-            case $this->number:
-                return "Your guess {$number} is <b>correct!</b>";
-                break;
             case $number < $this->number:
                 return "Your guess {$number} is <b>too low...</b>";
                 break;
@@ -110,6 +107,7 @@ class Guess
                 return "Your guess {$number} is <b>too high...</b>";
                 break;
         }
+        return "Your guess {$number} is <b>correct!</b>";
     }
 }
 

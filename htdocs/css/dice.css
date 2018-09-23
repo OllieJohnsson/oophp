@@ -10,8 +10,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
-    /* background-color: yellow; */
 }
 
 .column-container {
@@ -19,8 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    /* background-color: lime; */
+    margin: 0 0.5rem;
 }
 
 .left {
@@ -29,7 +26,6 @@
 }
 
 .right {
-    /* align-self: flex-end; */
     align-items: flex-end;
 }
 
@@ -51,13 +47,25 @@
     color: white;
     cursor: pointer;
     text-decoration: none;
-    margin: 0.4rem;
+    margin: 1rem;
+    min-width: 3rem;
+    text-align: center;
 }
 
 .roundedButton:hover {
     background-color: #ed5c7b;
 }
 
+.quitButton {
+    height: 1rem;
+}
+
+.quitButton img {
+    background-color: #ed4674;
+    border-radius: 30px;
+    padding: 0.2rem;
+    cursor: pointer;
+}
 
 i {
     font-style: normal;
@@ -75,5 +83,5 @@ i {
 
 .dice-utf8 {
     font-size: 4rem;
-    margin: 0;
+    margin-top: -2rem;
 }

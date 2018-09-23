@@ -12,9 +12,9 @@ class Round
 
     public function __construct($dices)
     {
+        $this->score = 0;
         $this->dices = $dices;
     }
-
 
 
 
@@ -24,21 +24,17 @@ class Round
         foreach ($this->dices as $dice) {
             $this->lastValues[]= $dice->roll();
         }
-        $this->score += array_sum($this->lastValues);
+        $this->isThereAOne($this->lastValues);
     }
 
-
-
-
-    // private function lose() : void
-    // {
-    //     echo "LOST ROUND";
-    //     // $this->nextPlayer();
-    // }
-
-
-
-
+    public function isThereAOne(array $values) : void
+    {
+        if (in_array(1, $values)) {
+            $this->score = 0;
+        } else {
+            $this->score += array_sum($values);
+        }
+    }
 
     public function getScore() : int
     {
@@ -48,6 +44,18 @@ class Round
     public function getLastValues() : array
     {
         return $this->lastValues;
+    }
+
+    public function getLastGraphics() : array
+    {
+        return array_map(function ($val) {
+            return "dice-" . $val;
+        }, $this->lastValues);
+    }
+
+    public function getLastScore() : int
+    {
+        return array_sum($this->lastValues);
     }
 }
 

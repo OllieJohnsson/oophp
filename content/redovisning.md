@@ -27,7 +27,6 @@ Veckans TIL är autoload.php. Det krävdes inte många rader kod för att slippa
 
 
 
-
 Kmom02
 -------------------------
 ###Hur gick det att överföra spelet “Gissa mitt nummer” in i din me-sida?
@@ -53,7 +52,28 @@ Veckans TIL är att docblock-kommentarerna faktiskt kan vara användbara.
 Kmom03
 -------------------------
 
-Här är redovisningstexten
+###Har du tidigare erfarenheter av att skriva kod som testar annan kod?
+Jag har provat på enhetstestning i OOPython-kursen. Så jag hade lite koll på vad det handlade om. Det fungerade på sammas sätt i PHP. Man använder assertions för att kontrollera att vissa värden stämmer överens med det förväntade värdet.
+
+###Hur ser du på begreppen enhetstestning och att skriva testbar kod?
+När jag gjorde enhetstester för tärningsspelet upptäckte jag att jag kunnat skriva min kod annorlunda för att underlätta testningen. Så om man har enhetstestning i åtanke från början kommer det gå mycket enklare att testa. Man kan också använda enhetstestning som felsökning. Jag hade en del buggar i min kod som jag inte kunde lösa. Då provade jag att skriva några enhetstester och felen kom fram. Jag tycker det känns bra att köra enhetstester. Man får en "garanti" på att allt fungerar som det är tänkt.
+
+###Förklara kort begreppen white/grey/black box testing samt positiva och negativa tester, med dina egna ord.
+White-box är när man har tillgång till all källkod och kan se vilka variabler och metoder som finns tillgängliga för testning.
+Black-box är motsatsen. Man ser applikationen ur användarens synvinkel och får basera testningen på dess beteende istället för kod. Grey-box är en kombination av de två andra. Man har kanske bara tillgång till delar av källkoden.
+
+Positiva tester är för att kontrollera att allt fungerar som tänkt vid korrekt input.
+Vid negativa tester kan man t.ex. skicka in ett felaktigt argument och kontrollera så att programmet beter sig på rätt sätt.
+
+###Berätta om hur du löste uppgiften med Tärningsspelet 100, hur du tänkte, planerade och utförde uppgiften samt hur du organiserade din kod?
+Först skapade jag de klasser jag trodde skulle krävas. Sen lade jag till variabler och metoder efterhand som de behövdes. Jag började med att testa spelets funktioner med utskrifter innan jag skapade vyerna. Då kunde jag se att det fungerade ungefär som jag ville. Sen lade jag till routes och vyer, där jag försökte få så lite kod som möjligt. I varje route kallas i princip bara en metod från game-klassen och redirectar till nästa route eller renderar en vy.
+
+###Hur väl lyckades du testa tärningsspelet 100?
+Efter att ha ändrat om lite i min kod för att täcka fler olika flöden, fick jag 97.7% kodtäckning. Jag lade till tester som täcker nästan hela kod-flödet, men det finns många fler test-fall man skulle kunna göra.
+
+###Vilken är din TIL för detta kmom?
+Veckans TIL är lite hur man kan tänka när man skriver sin kod för att underlätta för testning. Jag skulle använt mer argument i mina metoder för att enklare kunna styra de olika test-fallen.
+
 
 
 
