@@ -15,7 +15,7 @@ class DiceTest extends TestCase
      */
     public function testRollReturnsInt()
     {
-        $dice = new Dice(6);
+        $dice = new Dice();
         $res = $dice->roll();
         $this->assertInternalType('int', $res);
     }

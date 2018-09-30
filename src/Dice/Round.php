@@ -4,36 +4,28 @@ namespace Oliver\Dice;
 /**
  *
  */
-class Round
+class Round implements HistogramInterface
 {
-    private $dices;
+    use HistogramTrait;
+
     private $score = 0;
-    private $lastValues = [];
+    private $isLost = false;
 
-    public function __construct($dices)
+
+    public function didPlayerLose(array $lastValues)
     {
-        $this->score = 0;
-        $this->dices = $dices;
-    }
-
-
-
-    public function play() : void
-    {
-        $this->lastValues = [];
-        foreach ($this->dices as $dice) {
-            $this->lastValues[]= $dice->roll();
-        }
-        $this->isThereAOne($this->lastValues);
-    }
-
-    public function isThereAOne(array $values) : void
-    {
-        if (in_array(1, $values)) {
-            $this->score = 0;
+        if (in_array(1, $lastValues)) {
+            $this->lose();
         } else {
-            $this->score += array_sum($values);
+            $this->score += array_sum($lastValues);
         }
+    }
+
+
+    public function lose()
+    {
+        $this->isLost = true;
+        $this->score = 0;
     }
 
     public function getScore() : int
@@ -41,20 +33,13 @@ class Round
         return $this->score;
     }
 
-    public function getLastValues() : array
+    public function setScore($score)
     {
-        return $this->lastValues;
+        $this->score = $score;
     }
 
-    public function getLastGraphics() : array
+    public function isRoundLost() : bool
     {
-        return array_map(function ($val) {
-            return "dice-" . $val;
-        }, $this->lastValues);
-    }
-
-    public function getLastScore() : int
-    {
-        return array_sum($this->lastValues);
+        return $this->isLost;
     }
 }

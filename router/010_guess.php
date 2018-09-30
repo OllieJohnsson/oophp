@@ -13,14 +13,19 @@ $app->router->get("guess/get", function () use ($app) {
 
     $title = "Guess my number (GET)";
 
-    $correctNumber = $_GET["correctNumber"] ?? -1;
-    $tries = $_GET["tries"] ?? 6;
-    $guessedNumber = $_GET["guessedNumber"] ?? null;
+    $correctNumber = $app->request->getGet("correctNumber") ?? -1;
+    $tries = $app->request->getGet("tries") ?? 6;
+    $guessedNumber = $app->request->getGet("guessedNumber") ?? null;
+
+    $guess = $app->request->getGet("guess") ?? null;
+    $reset = $app->request->getGet("reset") ?? null;
+    $cheat = $app->request->getGet("cheat") ?? null;
 
     $game = new Guess($correctNumber, $tries);
     $message = "";
 
-    if (isset($_GET["guess"])) {
+
+    if (isset($guess)) {
         try {
             $message = $game->makeGuess($guessedNumber);
         } catch (GuessException $e) {
@@ -28,11 +33,11 @@ $app->router->get("guess/get", function () use ($app) {
         }
     }
 
-    if (isset($_GET["reset"])) {
+    if (isset($reset)) {
         $game = new Guess(-1, 6);
     }
 
-    if (isset($_GET["cheat"])) {
+    if (isset($cheat)) {
         $message = "Cheat: <b>" . $game->number() . "</b>";
     }
 

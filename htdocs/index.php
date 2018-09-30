@@ -21,7 +21,7 @@ require ANAX_INSTALL_PATH . "/vendor/autoload.php";
 $di = new Anax\DI\DIMagic();
 $di->loadServices(ANAX_INSTALL_PATH . "/config/di");
 $app = $di;
-$di->set("app", $app);
+$di->set("app", $app); 
 
 // Include user defined routes using programming-style.
 foreach (glob(ANAX_INSTALL_PATH . "/router/*.php") as $route) {

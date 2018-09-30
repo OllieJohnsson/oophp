@@ -1,5 +1,4 @@
 <?php
-
 namespace Anax\View;
 
 ?>
@@ -24,23 +23,22 @@ namespace Anax\View;
 
         <div class="column-container" style="margin-top: 1rem;">
             <div class="row-container">
-                <?php foreach ($game->getRound()->getLastGraphics() as $value) : ?>
+                <?php foreach ($game->getCurrentPlayer()->getLastGraphics() as $value) : ?>
                     <div class="dice-utf8">
                         <i class="<?= $value; ?>"></i>
                     </div>
                 <?php endforeach; ?>
             </div>
-            <p>Värde: <b><?= $game->getRound()->getLastScore(); ?></b></p>
+            <p>Värde: <b><?= $game->getCurrentPlayer()->getLastScore(); ?></b></p>
         </div>
 
-
-
-        <div class="right">
-            <p>Poäng i rundan: <b><?= $game->getRound()->getScore(); ?></b></p>
+        <div class="column-container right">
+            <p>Poäng i rundan: <b><?= $game->getCurrentPlayer()->getRound()->getScore(); ?></b></p>
+            <?= $game->getCurrentPlayer()->getRound()->printHistogram(1, 6); ?>
         </div>
     </div>
 
-    <?php if ($game->getRound()->getScore() > 0) { ?>
+    <?php if ($game->getCurrentPlayer()->getRound()->getScore() > 0) { ?>
         <p>Vill du kasta igen eller spara dina poäng?</p>
 
         <a href="../dice/playRound" class="roundedButton">Kasta tärningarna</a>

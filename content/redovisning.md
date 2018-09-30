@@ -80,8 +80,28 @@ Veckans TIL är lite hur man kan tänka när man skriver sin kod för att underl
 Kmom04
 -------------------------
 
-Här är redovisningstexten
+###Vilka är dina tankar och funderingar kring trait och interface?
+Jag tycker det känns användbart. Det är smart att dela upp återanvändbar kod i traits och sen bara skicka in där det behövs. På det sättet kan man slippa upprepning. Det kändes också smidigt att använda traits i samband med interface för att vara säker på att de metoder dom krävs finns i klassen.
+I den andra kursen bygger jag en IOS-app i Swift. Där har jag precis bekantat mig med delegates och protocols. Protocol verkar vara en variant på interface, man bestämmer vilka metoder som måste finnas i en klass för att den ska kunna använda interfacet/protocolet.
 
+###Hur gick det att skapa intelligensen och taktiken till tärningsspelet, hur gjorde du?
+Jag skapade några villkor som jag tyckte var rimliga inuti metoden shouldComputerPlay() i Game-klassen.
+Datorn spelar igen om något av detta gäller:
+
+- Om datorn har under 80 poäng och motståndaren mer än 90.
+- Om datorn har mer än 60 poäng och motståndaren mindre än 40.
+- Om både datorn och motståndaren har under 40 poäng.
+
+Datorn spara rundan om rundans värde är 40 eller mer.
+
+###Några reflektioner från att integrera hårdare in i ramverkets klasser och struktur?
+Det känns logiskt att använda de metoder och klasser som ramverket erbjuder. Det blir renare och om ramverket uppdateras behöver inte min kod påverkas.
+
+###Berätta hur väl du lyckades med make test inuti ramverket och hur väl du lyckades att testa din kod med enhetstester och vilken kodtäckning du fick.
+Jag kände att jag hade väldigt många metoder och det började kännas rörigt. Därför skrev jag om delar av min kod och förenklade så mycket som jag kunde. Det tog längre tid än vad jag tänkte, men jag det känns som att jag fick bättre koll på min kod när jag var färdig. Sen blev det enklare med enhetstesterna, men jag lyckades ändå inte nå 100%. Jag landade på 93.91% för Dice-klassen. Problemet var att jag inte på ett enkelt sätt kunde styra ifall datorn slog en etta eller inte. Hade jag haft mer tid kanske jag löst det.
+
+###Vilken är din TIL för detta kmom?
+Det får bli hur man kan använda trait och interface. Jag har greppat ungefär hur det fungerar, men det krävs nog att jag upprepar det några gånger till innan det sitter helt. Dessutom har jag återigen lärt mig att saker inte går lika snabbt som man tror.
 
 
 Kmom05

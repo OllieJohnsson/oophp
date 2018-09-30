@@ -26,7 +26,7 @@ $app->router->post("dice/", function () use ($app) {
     $title = "Tärningsspel 100";
 
     $game = $app->session->get("dice");
-    $playerName = $_POST["playerName"] ?? null;
+    $playerName = $app->request->getPost("playerName") ?? null;
 
     try {
         $game->addPlayers($playerName);
@@ -81,17 +81,25 @@ $app->router->get("dice/whoStarts", function () use ($app) {
 });
 
 
+$app->router->get("dice/autoPlay", function () use ($app) {
+    $game = $app->session->get("dice");
+    $game->autoPlay();
+    $app->response->redirect("dice/game");
+});
+
 $app->router->get("dice/game", function () use ($app) {
     $title = "Tärningsspel 100";
-
     $game = $app->session->get("dice");
-
-    $game->isComputerPlaying();
 
     if ($game->getWinner()) {
         $app->response->redirect("dice/winner");
         return;
     }
+
+    if ($game->getCurrentPlayer()->getName() == "Dator") {
+        $app->response->redirect("dice/autoPlay");
+    }
+
 
     $data = [
         "title" => $title,
@@ -107,35 +115,36 @@ $app->router->get("dice/game", function () use ($app) {
 
 $app->router->get("dice/startRound", function () use ($app) {
     $game = $app->session->get("dice");
-    $game->startNewRound();
+    $game->getCurrentPlayer()->startNewRound();
     $app->response->redirect("dice/playRound");
 });
 
 
 $app->router->get("dice/playRound", function () use ($app) {
     $game = $app->session->get("dice");
-    $game->getRound()->play();
+    $game->getCurrentPlayer()->play();
     $app->response->redirect("dice/roundResult");
 });
 
 
 $app->router->get("dice/saveRound", function () use ($app) {
     $game = $app->session->get("dice");
-    $game->saveRound();
+    $game->getCurrentPlayer()->save();
+    $game->nextPlayer($game->getTurn());
     $app->response->redirect("dice/game");
 });
 
 
 $app->router->get("dice/loseRound", function () use ($app) {
     $game = $app->session->get("dice");
-    $game->loseRound();
+    $game->getCurrentPlayer()->getRound()->lose();
+    $game->nextPlayer($game->getTurn());
     $app->response->redirect("dice/game");
 });
 
 
 $app->router->get("dice/roundResult", function () use ($app) {
     $title = "Tärningsspel 100";
-
     $game = $app->session->get("dice");
 
     $data = [

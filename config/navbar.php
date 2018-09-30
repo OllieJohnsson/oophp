@@ -20,7 +20,7 @@ return [
     ],
     [
         "text" => "Gissa",
-        "url" => "guess",
+        "url" => "guess-landing",
         "title" => "Gissa",
     ],
     [

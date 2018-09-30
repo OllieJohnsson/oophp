@@ -16,7 +16,9 @@ namespace Anax\View;
             <div class="column-container">
                 <p><?= $player->getName() ?></p>
                 <div class="dice-utf8">
-                    <i class="<?= $player->getFirstGraphic(); ?>"></i>
+                    <?php foreach ($player->getLastGraphics() as $value) : ?>
+                        <i class="<?= $value; ?>"></i>
+                    <?php endforeach; ?>
                 </div>
             </div>
         <?php endforeach; ?>
