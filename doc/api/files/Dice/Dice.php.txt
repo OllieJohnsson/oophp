@@ -8,7 +8,7 @@ class Dice
 {
     private $sides;
 
-    public function __construct(int $sides)
+    public function __construct(int $sides = 6)
     {
         $this->sides = $sides;
     }

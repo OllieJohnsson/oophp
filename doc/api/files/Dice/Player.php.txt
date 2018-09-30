@@ -6,25 +6,70 @@ namespace Oliver\Dice;
  */
 class Player
 {
+    private $score;
+    private $round;
     private $name;
-    private $score = 0;
-    private $firstRoll;
+    private $dices;
+    private $lastValues = [];
 
-    public function __construct(string $playerName)
+
+    public function __construct(string $name, array $dices)
     {
-        $this->name = $playerName;
+        $this->name = $name;
+        $this->dices = $dices;
+        $this->score = 0;
+    }
+
+    public function roll(int $amount) : array
+    {
+        $this->lastValues = [];
+        for ($i=0; $i < $amount; $i++) {
+            $this->lastValues[] = $this->dices[$i]->roll();
+        }
+        return $this->lastValues;
+    }
+
+    public function startNewRound()
+    {
+        $this->round = new Round();
     }
 
 
 
-    public function setFirstRoll(int $value) : void
+    public function play()
     {
-        $this->firstRoll = $value;
+        $this->roll(count($this->dices));
+        $this->round->updateSerie($this->lastValues);
+        $this->round->didPlayerLose($this->lastValues);
     }
 
-    public function getFirstGraphic() : string
+
+    public function save()
     {
-        return "dice-" . $this->firstRoll;
+        $this->score += $this->round->getScore();
+    }
+
+
+    public function getLastGraphics() : array
+    {
+        return array_map(function ($val) {
+            return "dice-" . $val;
+        }, $this->lastValues);
+    }
+
+
+
+
+
+
+    public function getLastValues() : array
+    {
+        return $this->lastValues;
+    }
+
+    public function getLastScore() : int
+    {
+        return array_sum($this->lastValues);
     }
 
     public function getName() : string
@@ -32,14 +77,14 @@ class Player
         return $this->name;
     }
 
-    public function updateScore(int $score) : void
-    {
-        $this->score += $score;
-    }
-
     public function getScore() : int
     {
         return $this->score;
+    }
+
+    public function getRound() : object
+    {
+        return $this->round;
     }
 }
 
