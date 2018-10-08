@@ -29,6 +29,11 @@ return [
         "title" => "Tärningsspel 100",
     ],
     [
+        "text" => "Filmer",
+        "url" => "movie",
+        "title" => "Filmer",
+    ],
+    [
         "text" => "Lek",
         "url" => "lek",
         "title" => "Lek runt och testa att integrera kod i me-sidan.",

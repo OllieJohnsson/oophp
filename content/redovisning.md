@@ -92,7 +92,7 @@ Datorn spelar igen om något av detta gäller:
 - Om datorn har mer än 60 poäng och motståndaren mindre än 40.
 - Om både datorn och motståndaren har under 40 poäng.
 
-Datorn spara rundan om rundans värde är 40 eller mer.
+Datorn sparar rundan om rundans värde är 40 eller mer.
 
 ###Några reflektioner från att integrera hårdare in i ramverkets klasser och struktur?
 Det känns logiskt att använda de metoder och klasser som ramverket erbjuder. Det blir renare och om ramverket uppdateras behöver inte min kod påverkas.
@@ -106,9 +106,24 @@ Det får bli hur man kan använda trait och interface. Jag har greppat ungefär 
 
 Kmom05
 -------------------------
+###Några reflektioner kring koden i övningen för PHP PDO och MySQL?
+Jag gick igenom hela koden och försökte sätta mig in i hur allt fungerade. Jag kände igen MySQL-koden från databas-kursen, så det var inte mycket nytt där. PDO verkar smidigt, med metoder som prepare() och lastInsertId(). Prepare() returnerar en statement-klass från vilken man kan kalla på execute(). Det fanns också en del smarta funktioner i function.php som jag kollade igenom, men hann inte implementera i min egen sida.
 
-Här är redovisningstexten
+###Hur gick det att överföra koden in i ramverket, stötte du på några utmaningar?
+Det gick bra. Databas-modulen gick enkelt att installera med Composer. Routes hade jag koll på sedan förra kursmomentet. Jag använde mig av de inbyggda metoderna getGet() och getPost() för att hämta värden.
 
+###Berätta om din slutprodukt för filmdatabasen, gjorde du endast basfunktionaliteten eller lade du till extra features och hur tänkte du till kring användarvänligheten och din kodstruktur?
+Jag hann bara med basfunktionaliteten denna veckan, den andra kursen tog för lång tid. Jag ville göra användningen så enkel och lättförståelig som möjligt och samtidigt inte upprepa kod.
+
+Jag lade sök-funktionen på förstasidan, där har man redan en överblick över vilka filmer som finns. Jag skrev in "%" i sql-frågan så det behövs inte i sök-fältet. När sökresultatet visas finns en tillbaka-knapp för att visa alla filmer igen. Hittas inget på sökningen visas ett meddelande och alla filmer visas.
+
+På första sidan finns en länk med en plus-ikon för att lägga till en ny film.
+Formuläret har ett ifyllt default-värde för länken till bild-katalogen.
+
+Varje film i listan har en länk till edit-sidan. Den använder samma formulär som add-sidan. Nuvarande data visas i formuläret och det går att uppdatera innehållet genom att trycka på "Redigera". Härifrån går det också att radera filmen.
+
+###Vilken är din TIL för detta kmom?
+Veckans TIL är hur man kan ladda in flera vyer i routen. Det var väldigt smidigt när jag ville lägga till sök-funktionen i min index-sida för movie. Det känns bra att ha de vyerna separerade så att de går att återanvända.
 
 
 Kmom06

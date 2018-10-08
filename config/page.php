@@ -18,7 +18,8 @@ return [
             "stylesheets" => [
                 "css/style.css",
                 "css/guess.css",
-                "css/dice.css"
+                "css/dice.css",
+                "css/movie.css"
             ],
             "javascripts" => [
                 "js/main.js",
