@@ -4,7 +4,7 @@
 
     <h1><?= $title ?></h1>
 
-    <form class="movieForm" action="<?= $link ?>" method="post">
+    <form class="form" action="<?= $link ?>" method="post">
         <input type="text" name="title" value="<?= $res->title ?>" placeholder="Titel">
         <input type="text" name="image" value="<?= $res->image ?>" placeholder="Bild-länk">
         <input type="number" name="year" value="<?= $res->year ?>" placeholder="År">

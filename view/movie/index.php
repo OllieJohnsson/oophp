@@ -1,5 +1,5 @@
 <article class="">
-    <table class="movieTable">
+    <table class="table">
         <th>Id</th>
         <th>Titel</th>
         <th>Bild</th>
@@ -13,8 +13,6 @@
                     onerror="this.src='img/movie/noimage.png'" alt="<?= $movie->image; ?>"></td>
                 <td><?= $movie->year; ?></td>
                 <td><a href="movie/edit?id=<?= $movie->id ?>"><img src="https://png.icons8.com/ios-glyphs/20/FF0055/pencil.png"></a></td>
-
-
             </tr>
         <?php endforeach; ?>
     </table>

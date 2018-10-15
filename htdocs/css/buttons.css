@@ -1,0 +1,36 @@
+.roundedButton {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    border: none;
+    background-color: #ed4674;
+    padding: 1rem;
+    border-radius: 3rem;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    margin: 1rem;
+    min-width: 3rem;
+    text-align: center;
+}
+
+
+.roundedButton * {
+    margin-left: 0.5rem;
+}
+
+.roundedButton:hover {
+    background-color: #ed5c7b;
+    text-decoration: none;
+}
+
+.quitButton {
+    height: 1rem;
+}
+
+.quitButton img {
+    background-color: #ed4674;
+    border-radius: 30px;
+    padding: 0.2rem;
+    cursor: pointer;
+}

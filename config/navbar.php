@@ -53,4 +53,14 @@ return [
         "url" => "test2",
         "title" => "Test-sida",
     ],
+    [
+        "text" => "TextFilter",
+        "url" => "textFilter",
+        "title" => "Text Filter",
+    ],
+    [
+        "text" => "Content",
+        "url" => "content",
+        "title" => "Content",
+    ],
 ];

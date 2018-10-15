@@ -19,7 +19,11 @@ return [
                 "css/style.css",
                 "css/guess.css",
                 "css/dice.css",
-                "css/movie.css"
+                "css/movie.css",
+                "css/menu.css",
+                "css/buttons.css",
+                "css/table.css",
+                "css/form.css"
             ],
             "javascripts" => [
                 "js/main.js",

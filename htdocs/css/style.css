@@ -99,6 +99,10 @@ article {
     margin: 0 auto;
 }
 
+article > * {
+    margin: 2rem;
+}
+
 article h1 {
     /* border-bottom: 1px solid #999; */
     font-size: 2.8em;
@@ -141,6 +145,49 @@ article ul {
     width: 100%;
 }
 
+article i {
+    font-size: 0.8rem;
+}
+
+article h4 {
+    margin-bottom: 0;
+}
+
+
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.column-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 0.5rem;
+}
+
+.left {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+.right {
+    align-items: flex-end;
+}
+
+.top {
+    align-items: flex-start;
+}
+
+.full-width {
+    width: 100%;
+    justify-content: space-between;
+}
+
 
 
 /**
@@ -164,7 +211,6 @@ article ul {
 .inner-wrap-footer a:hover {
     color: #888;
 }
-
 
 
 /**

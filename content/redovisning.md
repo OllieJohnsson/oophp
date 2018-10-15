@@ -128,8 +128,23 @@ Veckans TIL är hur man kan ladda in flera vyer i routen. Det var väldigt smidi
 
 Kmom06
 -------------------------
+###Hur gick det att jobba med klassen för filtrering och formatting av texten?
+Det gick bra. Jag följde tipsen i guiden och använde preg_replace för att konvertera till rätt taggar. I min egen parse-metod skickas det in två parametrar: texten som ska konverteras och en array av strängar som motsvarar filtren. En foreach-loop går igenom filtren, om filtret finns i den fördefinierade dictionaryn $filters så körs texten genom motsvarande metod och returneras. På så sätt går texten igenom alla inskickade filter i rätt ordning. Till sist returneras texten.
 
-Här är redovisningstexten
+###Berätta om din klasstruktur och kodstruktur för din lösning av webbsidor med innehåll i databasen.
+Jag började med att skriva alla min routes i "routes/050_content.php". När jag hade fått allt att fungera som jag ville började jag flytta över koden i klassen "src/Content/ContentController". Det gjorde att det bara krävdes en rad kod i "routes/050_content.php". All kod skrivs istället i ContentControllers metoder. Det blev en del nya begrepp att sätta sig in i. Men jag fick det att fungera genom att använda metoder i stil med indexActionGet(), där parametrar läggs på som paths i urlen.
+
+Jag utgick från min bas-route "content/". Dessutom hade ytterligare en route "content/admin" som jag ville kunna förlänga till t.ex. "content/admin/create". För att få det att fungera skapade jag en ContentController till: "src/Content/ContentAdminController". Jag vet inte om det var rätt väg att gå då de båda routsen egentligen utgår från samma route. För att inte få ett error-meddelande när "content/admin" besöks var jag tvungen att lägga en tom metod: adminAction() i ContentController.
+
+###Hur känner du rent allmänt för den koden du skrivit i din me/redovisa, vad är bra och mindre bra? Ser du potential till refactoring av din kod och/eller behov av stöd från ramverket?
+Jag tycker det känns bättre och bättre efterhand som jag "refactorat". Det känns bra att ha så mycket som möjligt i klasser, de blir då enklare att återanvända kod och så småningom testa. Jag gillar också att dela upp mina vyer i många små filer som sen kan skickas in i olika kombinationer för att skapa en helhet. Varje vy har då en primär huvuduppgift som hålls separerad från annat.
+
+
+###Vilken är din TIL för detta kmom?
+Veckans TIL är hur man kan använda controller-klasser för att hantera routes.
+
+###Övrigt
+Jag gjorde så att allt innehåll oavsett raderat eller ej visas under "content/index". Men raderat innehåll visas ej under "content/blog" eller "content/pages". Det går att återställa raderat innehåll med med en länk i actions-kolumnen under "content/admin". Man kan också återställa hela databasen under "content/admin".
 
 
 
